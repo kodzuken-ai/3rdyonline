@@ -1,0 +1,416 @@
+:root {
+    --sidebar-bg-color: #2C3E50; /* Soft navy blue */
+    --sidebar-hover-color: #1A252F; /* Slightly darker navy */
+    --sidebar-text-color: #ECF0F1; /* Light gray */
+    --sidebar-header-bg-color: #34495E; /* Muted teal */
+    --sidebar-shadow-color: rgba(0, 0, 0, 0.2);
+    --transition-speed: 0.3s;
+    --primary-color: #2C3E50; /* Consistent with sidebar */
+    --secondary-color: #1A252F; /* Slightly darker navy */
+    --text-color: #333;
+    --background-color: #ECF0F1;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.header {
+    background-color: var(--primary-color); /* Consistent with sidebar */
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px var(--sidebar-shadow-color);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.company-name {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.profile-menu {
+    display: flex;
+    align-items: center;
+}
+
+.profile-img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 150px;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dashboard-container {
+    display: flex;
+    transition: all var(--transition-speed);
+}
+
+.sidebar {
+    width: 250px;
+    min-height: 100vh;
+    background-color: var(--sidebar-bg-color);
+    color: var(--sidebar-text-color);
+    overflow: hidden;
+    box-shadow: 2px 0 5px var(--sidebar-shadow-color);
+    transition: width var(--transition-speed);
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar.collapsed {
+    width: 60px;
+}
+
+.sidebar-header {
+    padding: 20px;
+    background-color: var(--sidebar-header-bg-color);
+    text-align: center;
+    position: relative;
+    box-shadow: 0 2px 5px var(--sidebar-shadow-color);
+}
+
+.sidebar-header h2 {
+    margin: 0;
+    font-size: 1.5em;
+    display: inline-block;
+    transition: opacity var(--transition-speed);
+}
+
+.sidebar.collapsed .sidebar-header h2 {
+    opacity: 0;
+}
+
+.hamburger {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: var(--sidebar-text-color);
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.sidebar ul li {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    transition: background-color var(--transition-speed);
+    margin-bottom: 10px;
+    height: 60px;
+    width: 100%;
+}
+
+.sidebar ul li a {
+    color: var(--sidebar-text-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    padding-left: 15px;
+}
+
+.sidebar ul li a i {
+    margin-right: 10px;
+    font-size: 1.5em;
+}
+
+.sidebar ul li a:hover {
+    background-color: var(--sidebar-hover-color);
+}
+
+.sidebar.collapsed ul li a span {
+    display: none;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    margin-left: 10px;
+    transition: margin-left var(--transition-speed);
+}
+
+.sidebar.collapsed + .main-content {
+    margin-left: 60px;
+}
+
+h1 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f4f4f9;
+    color: #333;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    color: #333;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    margin: 0 4px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.pagination a:hover {
+    background-color: #ddd;
+}
+
+.pagination a[style="font-weight: bold;"] {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.filter-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.filter-form div {
+    flex: 1;
+    min-width: 200px;
+}
+
+.filter-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.filter-form input[type="date"],
+.filter-form select,
+.filter-form input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+.filter-form input[type="date"]:focus,
+.filter-form select:focus,
+.filter-form input[type="text"]:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.filter-form button[type="submit"],
+.filter-form button[type="button"] {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.filter-form button[type="submit"]:hover,
+.filter-form button[type="button"]:hover {
+    background-color: var(--secondary-color);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-view {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    align-self: flex-start;
+    margin-top: 20px; /* Adjust as needed for vertical alignment */
+}
+
+.btn-view:hover {
+    background-color: var(--secondary-color);
+}
+
+.total-sales {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--primary-color);
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 60px;
+    }
+
+    .sidebar.collapsed {
+        width: 250px;
+    }
+
+    .sidebar.collapsed .sidebar-header h2 {
+        opacity: 1;
+    }
+
+    .sidebar.collapsed ul li a span {
+        display: inline;
+    }
+
+    .main-content {
+        margin-left: 60px;
+    }
+
+    .filter-form {
+        flex-direction: column;
+    }
+}
+
+/* Responsive styles for very large screens (e.g., 27-inch desktop) */
+@media (min-width: 1440px) {
+    .header {
+        padding: 30px 60px;
+    }
+
+    .company-name {
+        font-size: 2.5em;
+    }
+
+    .main-content {
+        padding: 60px;
+    }
+
+    .container {
+        max-width: 1200px;
+    }
+}

@@ -1,0 +1,96 @@
+.order-details {
+    padding: 2vw; /* Use viewport width for responsive padding */
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3vh; /* Use viewport height for responsive margin */
+    padding-bottom: 2vh;
+    border-bottom: 1px solid #eee;
+}
+
+.status-badge {
+    padding: 0.5vw 1vw; /* Use viewport width for responsive padding */
+    border-radius: 15px;
+    font-size: 0.9em;
+    text-transform: capitalize;
+}
+
+.items-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2vh 0;
+}
+
+.items-table th,
+.items-table td {
+    padding: 1.2vw; /* Use viewport width for responsive padding */
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.items-table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+.total-label {
+    text-align: right;
+    font-weight: bold;
+}
+
+.total-amount {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.payment-info {
+    margin-top: 2vh;
+    padding-top: 2vh;
+    border-top: 1px solid #eee;
+}
+
+h3, h4 {
+    color: #333;
+    margin-bottom: 1.5vh;
+}
+
+.customer-info p,
+.payment-info p {
+    margin: 0.5vh 0;
+    color: #666;
+}
+
+.back-button {
+    margin-top: 2vh;
+}
+
+/* Media queries for larger screens */
+@media (min-width: 1200px) {
+    .order-details {
+        padding: 3vw; /* Increase padding for larger screens */
+    }
+
+    .order-header {
+        margin-bottom: 4vh;
+        padding-bottom: 3vh;
+    }
+
+    .status-badge {
+        font-size: 1em; /* Increase font size for larger screens */
+    }
+
+    .items-table th,
+    .items-table td {
+        padding: 1.5vw; /* Increase padding for larger screens */
+    }
+
+    h3, h4 {
+        margin-bottom: 2vh;
+    }
+
+    .back-button {
+        margin-top: 3vh;
+    }
+}

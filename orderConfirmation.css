@@ -1,0 +1,141 @@
+/* Base styles for all screen sizes */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+.order-container {
+    width: 90%; /* Increase width for smaller screens */
+    max-width: 1200px;
+    margin: 2vh auto;
+    background-color: #fff;
+    padding: 2vw;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 2rem;
+}
+
+.order-header, .order-item {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    align-items: center;
+    padding: 1vw;
+    border-bottom: 1px solid #ddd;
+}
+
+.order-header {
+    font-weight: bold;
+    border-top: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+.order-summary {
+    margin-top: 2vh;
+    text-align: right;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 2vh;
+}
+
+.btn {
+    padding: 1vw 2vw;
+    margin: 0.5vw;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.confirm-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+.confirm-btn:hover {
+    background-color: #218838;
+}
+
+.cancel-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.cancel-btn:hover {
+    background-color: #c82333;
+}
+
+.form-group {
+    margin-bottom: 1.5vh;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5vh;
+    color: #555;
+    text-align: left;
+}
+
+input[type="text"], select {
+    width: 100%;
+    padding: 0.8vw;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Media queries for larger screens */
+@media (min-width: 1440px) {
+    .order-container {
+        width: 70%;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .order-summary {
+        font-size: 1.5rem;
+    }
+
+    .btn {
+        font-size: 1.1rem;
+    }
+}
+
+/* Media queries for smaller screens */
+@media (max-width: 768px) {
+    .order-container {
+        width: 95%; /* Increase width for smaller screens */
+        padding: 4vw; /* Increase padding for smaller screens */
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Decrease font size for smaller screens */
+    }
+
+    .order-header, .order-item {
+        grid-template-columns: 1fr; /* Stack columns for smaller screens */
+        text-align: center; /* Center text for smaller screens */
+    }
+
+    .order-summary {
+        font-size: 1rem; /* Decrease font size for smaller screens */
+    }
+
+    .btn {
+        font-size: 0.9rem; /* Decrease font size for smaller screens */
+        padding: 2vw 4vw; /* Increase padding for better touch targets */
+    }
+}

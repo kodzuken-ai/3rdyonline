@@ -1,0 +1,112 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+.receipt-container {
+    width: 90%;
+    max-width: 600px; /* Increased max-width for larger screens */
+    margin: 2rem auto;
+    background-color: #fff;
+    padding: 30px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+}
+
+.receipt-header, .receipt-item, .receipt-summary {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    padding: 10px 0;
+    border-bottom: 1px dashed #ddd;
+}
+
+.receipt-header {
+    font-weight: bold;
+    border-top: 1px dashed #ddd;
+}
+
+.receipt-summary {
+    margin-top: 15px;
+    font-size: 1rem;
+}
+
+.receipt-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    .receipt-container {
+        width: 95%;
+        padding: 20px; /* Reduced padding for smaller screens */
+    }
+
+    h1 {
+        font-size: 1.2rem; /* Adjusted font size for smaller screens */
+    }
+
+    .receipt-header, .receipt-item, .receipt-summary {
+        grid-template-columns: 1fr; /* Stack items vertically */
+        text-align: left;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Responsive styles for very large screens (e.g., 27-inch desktop) */
+@media (min-width: 1440px) {
+    .receipt-container {
+        max-width: 800px; /* Further increased max-width for very large screens */
+        padding: 40px; /* Increased padding for larger screens */
+    }
+
+    h1 {
+        font-size: 2rem; /* Larger font size for better readability */
+    }
+
+    .receipt-summary {
+        font-size: 1.2rem; /* Larger font size */
+    }
+
+    .btn {
+        padding: 12px 24px;
+        font-size: 1.1rem;
+    }
+}

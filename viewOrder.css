@@ -1,0 +1,145 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #222222;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px; /* Increased max-width for larger screens */
+    margin: 2rem auto;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2rem; /* Slightly larger font size for better readability */
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.section {
+    margin-bottom: 1.5rem;
+}
+
+.section-header {
+    font-size: 1.5rem; /* Increased font size */
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.details-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+.details-row strong {
+    color: #333;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    background-color: #ffc107;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.table th, .table td {
+    text-align: left;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    font-size: 0.95rem;
+}
+
+.table th {
+    background-color: #f1f1f1;
+    color: #333;
+    font-weight: bold;
+}
+
+.table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.total-row {
+    font-weight: bold;
+    text-align: right;
+    color: #007bff;
+    font-size: 1rem;
+}
+
+.payment-info {
+    font-size: 1rem;
+    color: #555;
+}
+
+.payment-info strong {
+    color: #333;
+}
+
+.payment-proof {
+    max-width: 30%; /* Ensures the image does not exceed the container's width */
+    height: auto;   /* Maintains the aspect ratio */
+    display: block; /* Ensures the image is displayed as a block element */
+    margin: 1rem 0; /* Adds some margin for spacing */
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    .details-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .container {
+        padding: 1rem; /* Reduced padding for smaller screens */
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Adjusted font size for smaller screens */
+    }
+
+    .section-header {
+        font-size: 1.25rem; /* Adjusted font size */
+    }
+}
+
+/* Responsive styles for very large screens (e.g., 27-inch desktop) */
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1400px; /* Further increased max-width for very large screens */
+        padding: 3rem; /* Increased padding for larger screens */
+    }
+
+    h1 {
+        font-size: 2.5rem; /* Larger font size for better readability */
+    }
+
+    .section-header {
+        font-size: 1.75rem; /* Larger font size */
+    }
+
+    .details-row {
+        font-size: 1.1rem; /* Slightly larger font size */
+    }
+
+    .table th, .table td {
+        font-size: 1rem; /* Larger font size for table content */
+    }
+}
